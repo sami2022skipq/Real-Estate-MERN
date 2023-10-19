@@ -15,10 +15,10 @@ const userSchema = new mongoose.Schema(
         password:{
             type:String,
             require:true,
-            unique:true
+            
         }
     },{timestamps:true}
 )
 const User = mongoose.model('User', userSchema)
 
-export default User
+module.exports = User
