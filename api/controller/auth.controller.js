@@ -1,6 +1,5 @@
 const User = require("../models/user.model.js");
 const bcrypt = require('bcrypt');
-const errorHandler = require("../utils/error.js");
 
 const auth = async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -11,8 +10,6 @@ const auth = async (req, res, next) => {
     res.status(201).json("User created successfully");
   } catch (error) {
 
-    // next(errorHandler(505, "Error from the function" ))
-    // res.status(500).json(error.message)
     next(error)
     
   }
